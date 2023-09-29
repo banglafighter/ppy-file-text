@@ -4,9 +4,12 @@ from ppy_file_text import FileUtil
 
 class TextFileMan:
     @staticmethod
-    def get_text_from_file(file_path, exception_message: str = "Invalid File"):
+    def get_text_from_file(file_path, exception_message: str = "Invalid File", is_exception: bool = True, default=None):
         if not FileUtil.is_exist(file_path):
-            raise PPyCException(exception_message)
+            if is_exception:
+                raise PPyCException(exception_message)
+            return default
+
         with open(file_path, 'r', encoding="utf-8") as file:
             return file.read()
 
