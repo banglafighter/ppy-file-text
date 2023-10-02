@@ -9,12 +9,12 @@ env = os.environ.get('source')
 
 
 def get_dependencies():
-    dependency = ["ppy-common"]
+    dependency = []
 
     if env and env == "dev":
         return dependency
 
-    return dependency + []
+    return dependency + ["ppy-common"]
 
 
 setup(
