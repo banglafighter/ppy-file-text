@@ -57,6 +57,10 @@ class FileUtil:
         return os.path.join(*args)
 
     @staticmethod
+    def getcwd():
+        return os.getcwd()
+
+    @staticmethod
     def file_size_into_byte(path):
         if FileUtil.is_exist(path):
             return os.stat(path).st_size
