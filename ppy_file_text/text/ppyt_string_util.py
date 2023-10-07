@@ -1,4 +1,5 @@
 import re
+from copy import copy
 
 
 class StringUtil:
@@ -26,7 +27,7 @@ class StringUtil:
 
     @staticmethod
     def text_to_url_text(text: str):
-        text = StringUtil.camelcase_to(text, "-")
+        text = StringUtil.camelcase_to(copy(text), "-")
         text = StringUtil.find_and_replace_with(text, " ", "-")
         text = StringUtil.find_and_replace_with(text, "_", "-")
         text = StringUtil.remove_special_character(text)
@@ -45,11 +46,12 @@ class StringUtil:
 
     @staticmethod
     def find_and_replace_with(text: str, find: any, replace: any):
+        text = copy(text)
         return text.replace(find, replace)
 
     @staticmethod
     def human_readable(text: str):
-        text = StringUtil.camelcase_to(text, " ")
+        text = StringUtil.camelcase_to(copy(text), " ")
         text = StringUtil.find_and_replace_with(text, "-", " ")
         text = text.strip()
         text = text.title()
@@ -57,7 +59,7 @@ class StringUtil:
 
     @staticmethod
     def system_readable(text: str):
-        text = StringUtil.camelcase_to(text, "_")
+        text = StringUtil.camelcase_to(copy(text), "_")
         text = StringUtil.find_and_replace_with(text, " ", "_")
         text = text.strip()
         text = text.lower()
