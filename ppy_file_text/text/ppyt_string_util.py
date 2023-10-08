@@ -33,6 +33,7 @@ class StringUtil:
         text = StringUtil.camelcase_to(copy(text), "-")
         text = StringUtil.find_and_replace_with(text, " ", "-")
         text = StringUtil.find_and_replace_with(text, "_", "-")
+        text = StringUtil.replace_multiple_occurrence_to_single_with(text=text, to="-")
         text = StringUtil.remove_special_character(text)
         text = text.strip()
         text = text.strip("-")
@@ -68,6 +69,7 @@ class StringUtil:
     def system_readable(text: str):
         text = StringUtil.camelcase_to(copy(text), "_")
         text = StringUtil.find_and_replace_with(text, " ", "_")
+        text = StringUtil.find_and_replace_with(text, "-", "_")
         text = StringUtil.replace_multiple_occurrence_to_single_with(text=text, to="_")
         text = text.strip()
         text = text.lower()
