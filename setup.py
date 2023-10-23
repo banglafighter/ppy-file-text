@@ -20,10 +20,10 @@ def get_dependencies():
 setup(
     name='ppy-file-text',
     version='0.0.2',
-    url='https://github.com/problemfighter/ppy-file-text',
+    url='https://github.com/banglafighter/ppy-file-text',
     license='Apache 2.0',
-    author='Problem Fighter',
-    author_email='problemfighter.com@gmail.com',
+    author='Bangla Fighter',
+    author_email='banglafighter.com@gmail.com',
     description='PWeb Python File & Text is a library which help to perform text read write operation with file directory manipulation',
     long_description=README,
     long_description_content_type='text/markdown',
