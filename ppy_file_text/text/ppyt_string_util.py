@@ -106,3 +106,7 @@ class StringUtil:
         name = StringUtil.py_underscore_name(name=name)
         name = StringUtil.underscore_to_camelcase(word=name)
         return name
+
+    @staticmethod
+    def format_int(number, leading_zero: str = "2"):
+        return "{1:0{0}}".format(leading_zero, number)
