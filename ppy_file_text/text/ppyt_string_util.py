@@ -46,7 +46,7 @@ class StringUtil:
 
     @staticmethod
     def replace_space_with(text: str, to: str = "_"):
-        return re.sub('\s+', to, text)
+        return re.sub(r'\s+', to, text)
 
     @staticmethod
     def find_and_replace_with(text: str, find: any, replace: any):
