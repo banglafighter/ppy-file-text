@@ -26,6 +26,12 @@ class FileUtil:
         return Path(name_with_extension).stem
 
     @staticmethod
+    def get_filename(path_with_filename):
+        path_with_filename = path_with_filename.rstrip(os.sep)
+        filename = os.path.basename(path_with_filename)
+        return filename
+
+    @staticmethod
     def delete(path):
         if FileUtil.is_exist(path):
             if FileUtil.is_it_file(path):
